@@ -77,7 +77,6 @@ nav ul li a:hover {
     background-color: #f58c64;
 }
 
-
 .content {
     box-sizing: border-box;
     width: 1000px;
@@ -107,10 +106,8 @@ nav ul li a:hover {
     font-family: "微软雅黑", sans-serif;
 }
 
-
 .sidebar-students {
     width: 198px;
-
     background: url(../images/subnav_bg_02.png) no-repeat;
 }
 
@@ -119,32 +116,31 @@ nav ul li a:hover {
     background: url(../images/subnav_bg_03.png) no-repeat;
 }
 
-.selected-sidebar-students {
+.selected-students {
     width: 199px;
-    height: 50px;
     background: url(../images/subnav_bg_04.png) no-repeat;
 }
 
-.selected-sidebar-teachers {
+.selected-teachers {
     width: 215px;
-    height: 50px;
     background: url(../images/subnav_bg_05.png) no-repeat;
 }
 
-
 .sidebar ul li a {
+    display: block;
     height: 50px;
-    margin-left: 40px;
     line-height: 50px;
+    padding-left: 40px;
     font-size: 16px;
     color: #fff;
 }
 
 .show-works {
+    box-sizing: border-box;
     width: 1000px;
     height: 314px;
-    float: left;
-    margin-top: 8px;
+    margin-top: 29px;
+    padding: 0 40px;
 }
 
 .show-works section:not(:first-of-type) {
@@ -154,7 +150,6 @@ nav ul li a:hover {
 .show-works .btn {
     width: 28px;
     height: 8px;
-    float: right;
     margin-right: 54px;
 }
 
