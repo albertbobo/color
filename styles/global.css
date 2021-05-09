@@ -1,4 +1,3 @@
-@charset "utf-8";
 
 .clearfix:after {
     content: "020";
@@ -16,7 +15,6 @@
 body {
     width: 1000px;
     margin: 0 auto;
-    padding: 0;
     background-color: #fff0df;
 }
 
@@ -49,7 +47,6 @@ nav {
     font-size: 16px;
     color: #fff;
     background: url(../images/nav_bg.png) no-repeat;
-
 }
 
 nav ul {
@@ -80,74 +77,67 @@ nav ul li a:hover {
     background-color: #f58c64;
 }
 
+
 .content {
+    box-sizing: border-box;
     width: 1000px;
     height: 681px;
+    padding-top: 19px;
     background: url(../images/content_bg.jpg) no-repeat;
 }
 
-.banner {
+.banner-wrapper {
+    position: relative;
     width: 1000px;
     height: 325px;
     background: url(../images/banner.png) no-repeat;
-    margin-top: 19px;
-    float: left;
 }
 
-.subnav {
+.sidebar {
+    position: absolute;
+    top: 28px;
     width: 224px;
     height: 112px;
-    background: url(../images/subnav_bg_01.png) no-repeat;
-    margin-top: 27px;
-    float: left;
+    background: url(../images/subnav_bg.png) no-repeat;
 }
 
-.subnav ul {
-    padding: 0;
-    margin: 0;
-}
-
-.subnav ul li {
-    text-decoration: none;
-    list-style-type: none;
-    margin: 4px 0;
-}
-
-.subnav ul li a {
-    font-size: 16px;
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    line-height: 16px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 40px;
-}
-
-.a01 {
-    width: 198px;
+.sidebar ul li {
     height: 50px;
+    margin: 4px 0;
     font-family: "微软雅黑", sans-serif;
+}
+
+
+.sidebar-students {
+    width: 198px;
+
     background: url(../images/subnav_bg_02.png) no-repeat;
 }
 
-.a02 {
+.sidebar-teachers {
     width: 214px;
-    height: 50px;
-    font-family: "微软雅黑", sans-serif;
     background: url(../images/subnav_bg_03.png) no-repeat;
 }
 
-.current02 {
+.selected-sidebar-students {
     width: 199px;
     height: 50px;
     background: url(../images/subnav_bg_04.png) no-repeat;
 }
 
-.current03 {
+.selected-sidebar-teachers {
     width: 215px;
     height: 50px;
     background: url(../images/subnav_bg_05.png) no-repeat;
+}
+
+
+.sidebar ul li a {
+    height: 50px;
+    margin-left: 40px;
+    line-height: 50px;
+    font-size: 16px;
+    color: #fff;
 }
 
 .show-works {
