@@ -46,10 +46,23 @@ nav {
     font-family: "微软雅黑", sans-serif;
     font-size: 16px;
     color: #fff;
-    background: url(../images/nav_bg.png) no-repeat;
+}
+
+nav:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 707px;
+    height: 0;
+    border-bottom: 47px solid #231f20;
+    border-left: 52px solid transparent;
 }
 
 nav ul {
+    z-index: 99;
+    position: relative;
     padding: 0;
     margin: 0 auto 0 90px;
 }
@@ -79,10 +92,10 @@ nav ul li a:hover {
 
 .content {
     box-sizing: border-box;
-    width: 1000px;
-    height: 681px;
     padding-top: 19px;
     background: url(../images/content_bg.jpg) no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
 }
 
 .banner-wrapper {
@@ -97,7 +110,7 @@ nav ul li a:hover {
     top: 28px;
     width: 224px;
     height: 112px;
-    background: url(../images/subnav_bg.png) no-repeat;
+    background: url(../images/sidebar_bg.png) no-repeat;
 }
 
 .sidebar ul li {
@@ -108,22 +121,22 @@ nav ul li a:hover {
 
 .sidebar-students {
     width: 198px;
-    background: url(../images/subnav_bg_02.png) no-repeat;
+    background: url(../images/sidebar_01.png) no-repeat;
 }
 
 .sidebar-teachers {
     width: 214px;
-    background: url(../images/subnav_bg_03.png) no-repeat;
+    background: url(../images/sidebar_02.png) no-repeat;
 }
 
 .selected-students {
     width: 199px;
-    background: url(../images/subnav_bg_04.png) no-repeat;
+    background: url(../images/sidebar_01_curr.png) no-repeat;
 }
 
 .selected-teachers {
     width: 215px;
-    background: url(../images/subnav_bg_05.png) no-repeat;
+    background: url(../images/sidebar_02_curr.png) no-repeat;
 }
 
 .sidebar ul li a {
@@ -291,16 +304,34 @@ nav ul li a:hover {
 
 footer {
     width: 1000px;
-    height: 73px;
-    background: url(../images/footer_bg.jpg) no-repeat;
-    font-family: "微软雅黑", sans-serif;
-    font-size: 12px;
-    color: #fff;
-    text-align: center;
-    line-height: 2em;
-    padding-top: 60px;
+    background-color: #231f20;
+    border-bottom: 4px solid #f0c002;
 }
 
-footer p {
+footer:before {
+    content: "";
+    display: block;
+    width: 920px;
+    height: 0;
+    border-top: 40px solid #f26530;
+    border-right: 40px solid #231f20;
+    border-left: 40px solid #231f20;
+}
+
+.footer-triangle {
+    width: 0;
+    height: 0;
     margin: 0 auto;
+    border-top: 16px solid #f26530;
+    border-right: 16px solid transparent;
+    border-left: 16px solid transparent;
+}
+
+.footer-info {
+    padding: 18px 0 28px 0;
+    text-align: center;
+    line-height: 2em;
+    color: #fff;
+    font-family: "微软雅黑", sans-serif;
+    font-size: 12px;
 }
