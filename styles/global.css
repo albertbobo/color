@@ -148,160 +148,113 @@ nav ul li a:hover {
     color: #fff;
 }
 
+/*轮播图*/
 .show-works {
     box-sizing: border-box;
     width: 1000px;
-    height: 314px;
-    margin-top: 29px;
-    padding: 0 40px;
+    padding: 0 40px 15px 40px;
 }
 
 .show-works section:not(:first-of-type) {
     display: none;
 }
 
-.show-works .btn {
-    width: 28px;
-    height: 8px;
-    margin-right: 54px;
-}
-
-.show-works .btn .current {
-    width: 8px;
-    height: 8px;
-    float: left;
-    background: url(../images/btn_01.png) no-repeat;
-    cursor: pointer;
-}
-
-.show-works .btn div {
-    width: 8px;
-    height: 8px;
-    float: right;
-    background: url(../images/btn_02.png) no-repeat;
-    display: inline;
-    cursor: pointer;
-}
-
-.show-works .btn div:hover {
-    background: url(../images/btn_01.png) no-repeat;
-}
-
-.slide-box {
-    margin: 24px auto;
-    width: 919px;
-    height: 293px;
-    border: 0;
+.slideshow {
+    overflow: hidden;
     position: relative;
-    background: url(../images/scrollPic.png) 0 0 no-repeat;
-    -webkit-animation: slide 12s linear infinite;
-    -o-animation: slide 12s linear infinite;
-    animation: slide 12s linear infinite;
+    width: 919px;
+    height: 320px;
+    margin: 0 auto;
 }
 
-
-@-webkit-keyframes slide {
-    0% {
-        background-position: 0 0;
-    }
-    46% {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: -919px 0;
-    }
-    96% {
-        background-position: -919px 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
+.slideshow .list {
+    position: absolute;
+    bottom: 0;
+    width: 1838px;
+    height: 293px;
 }
 
-@-moz-keyframes slide {
-    0% {
-        background-position: 0 0;
-    }
-    46% {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: -919px 0;
-    }
-    96% {
-        background-position: -919px 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
+.slideshow li {
+    float: left;
+    position: relative;
+    cursor: pointer;
 }
 
-@-o-keyframes slide {
-    0% {
-        background-position: 0 0;
-    }
-    46% {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: -919px 0;
-    }
-    96% {
-        background-position: -919px 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
+.slideshow li:not(:nth-of-type(4n)) {
+    margin-right: 13px;
 }
 
-@keyframes slide {
-    0% {
-        background-position: 0 0;
-    }
-    46% {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: -919px 0;
-    }
-    96% {
-        background-position: -919px 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
+.slideshow li img {
+    display: block;
+    width: 220px;
+    height: 293px;
 }
 
-.prev {
-    opacity: 0.5;
+.img-title {
+    position: absolute;
+    bottom: 0;
+    width: 220px;
+    padding: 13px 0;
+    border-bottom: 2px solid transparent;
+    background-color: #231f20;
+    opacity: .5;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+
+.slideshow li:hover .img-title {
+    border-bottom: 2px solid #13a9cf;
+    opacity: .8;
+}
+
+#prev, #next {
+    position: absolute;
+    top: 50%;
     width: 41px;
     height: 53px;
-    background: url(../images/prev.png) no-repeat;
+    margin-top: -27px;
+    opacity: .5;
     cursor: pointer;
-    position: absolute;
-    top: 120px;
+}
+
+#prev {
     left: 0;
+    background: url(../images/arrow_prev.png) no-repeat;
 }
 
-.prev:hover {
-    opacity: 0.7;
-}
-
-.next {
-    opacity: 0.5;
-    width: 41px;
-    height: 53px;
-    background: url(../images/next.png) no-repeat;
-    cursor: pointer;
-    position: absolute;
-    top: 120px;
+#next {
     right: 0;
+    background: url(../images/arrow_next.png) no-repeat;
 }
 
-.next:hover {
-    opacity: 0.7;
+#prev:hover, #next:hover {
+    opacity: .7;
 }
 
+.slideshow .buttons {
+    position: absolute;
+    top: 0;
+    right: 2px;
+}
+
+.slideshow .buttons span {
+    float: left;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #3f3a3b;
+    cursor: pointer;
+}
+
+.slideshow .buttons span.on, .slideshow .buttons span:hover {
+    background-color: #13a9cf;
+}
+
+/*footer*/
 footer {
     width: 1000px;
     background-color: #231f20;

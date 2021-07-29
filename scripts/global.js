@@ -59,7 +59,8 @@ function prepareInternalnav() {
             if (this.destination === "students-works") {
                 selectedStudents.className = "selected-students";
                 sidebarTeachers.className = "sidebar-teachers";
-            } else if (this.destination === "teachers-works") {
+            }
+            if (this.destination === "teachers-works") {
                 sidebarTeachers.className = "selected-teachers";
                 selectedStudents.className = "sidebar-students";
             }
@@ -70,10 +71,95 @@ function prepareInternalnav() {
     }
 }
 
+// 轮播图
+function prepareSlideshow() {
+    var slideshow = document.getElementsByClassName("slideshow")[0];
+    var list = document.getElementsByClassName("list")[0];
+    var buttons = document.getElementsByClassName("buttons")[0].getElementsByTagName("span");
+    var prev = document.getElementById("prev");
+    var next = document.getElementById("next");
+    var timer;
+    var index = 1;
+
+    list.style.left = "0";
+    buttons[0].className = "on";
+
+    function animate(offset) {
+        var newLeft = parseInt(list.style.left) + offset;
+        list.style.left = newLeft + "px";
+        // 无限滚动判断
+        if (newLeft < -919) {
+            list.style.left = 0 + "px";
+        }
+        if (newLeft > 0) {
+            list.style.left = -919 + "px";
+        }
+    }
+
+    function play() {
+        // 重复执行定时器
+        timer = setInterval(function () {
+            next.onclick();
+        }, 4000)
+    }
+
+    function stop() {
+        clearInterval(timer);
+    }
+
+    // 小圆点
+    function showButtons() {
+        for (var i = 0; i < buttons.length; i++) {
+            if (buttons[i].className === "on") {
+                buttons[i].className = "";
+            }
+        }
+        buttons[index - 1].className = "on";
+    }
+
+    function clickButtons() {
+        for (var i = 0; i < buttons.length; i++) {
+            (function (i) {
+                buttons[i].onclick = function () {
+                    var clickIndex = this.getAttribute("index");
+                    var offset = 919 * (index - clickIndex);
+                    animate(offset);
+                    index = clickIndex;
+                    showButtons();
+                }
+            })(i);
+        }
+    }
+
+    prev.onclick = function () {
+        index -= 1;
+        if (index < 1) {
+            index = 2;
+        }
+        showButtons();
+        animate(919);
+    };
+
+    next.onclick = function () {
+        index += 1;
+        if (index > 2) {
+            index = 1;
+        }
+        showButtons();
+        animate(-919);
+    };
+
+    slideshow.onmouseover = stop;
+    slideshow.onmouseout = play;
+    play();
+    clickButtons();
+}
+
 
 function loadEvents() {
     highlightPage();
     prepareInternalnav();
+    prepareSlideshow();
 }
 
 addLoadEvent(loadEvents);
