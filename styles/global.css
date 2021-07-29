@@ -98,6 +98,11 @@ nav ul li a:hover {
     background-size: cover;
 }
 
+.content-wrapper {
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
 .banner-wrapper {
     position: relative;
     width: 1000px;

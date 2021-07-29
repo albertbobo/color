@@ -73,9 +73,13 @@ function prepareInternalnav() {
 
 // 轮播图
 function prepareSlideshow() {
+    if (!document.getElementsByTagName) return false;
+    if (!document.getElementById) return false;
     var slideshow = document.getElementsByClassName("slideshow")[0];
     var list = document.getElementsByClassName("list")[0];
-    var buttons = document.getElementsByClassName("buttons")[0].getElementsByTagName("span");
+    var btns = document.getElementsByClassName("buttons");
+    if (btns.length === 0) return false;
+    var buttons = btns[0].getElementsByTagName("span");
     var prev = document.getElementById("prev");
     var next = document.getElementById("next");
     var timer;
